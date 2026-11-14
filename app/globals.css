@@ -1,0 +1,95 @@
+﻿@import "tailwindcss";
+
+:root {
+  --page-bg: #fafdf7;
+  --white: #ffffff;
+  --soft-mint: #ecf7ee;
+  --green-700: #2e7d32;
+  --green-800: #256628;
+  --forest-green: #0f3d22;
+  --leaf-green: #4caf50;
+  --leaf-green-soft: #a5d6a7;
+  --orange-accent: #f28c28;
+  --body-text: #44524a;
+  --muted: #6b7a71;
+  --border: #ddebdd;
+  --whatsapp: #25d366;
+  --shadow-soft: 0 18px 50px rgba(30, 78, 45, 0.10);
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --font-display: "Playfair Display", serif;
+  --font-body: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--body-text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(76, 175, 80, 0.2);
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer utilities {
+  .container-shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-shell {
+    @apply py-16 md:py-20;
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(221, 235, 221, 0.9);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold tracking-[0.02em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg;
+    background: linear-gradient(135deg, var(--green-700), var(--leaf-green));
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-[var(--border)] bg-white px-5 py-3 text-sm font-semibold text-[var(--forest-green)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--green-700)] hover:text-[var(--green-700)];
+  }
+
+  .soft-card {
+    @apply rounded-[28px] border border-[var(--border)] bg-white shadow-[0_14px_35px_rgba(33,60,48,0.05)];
+  }
+}
